@@ -17,6 +17,10 @@ html {
   background-color: rgb(89, 89, 133);
 }
 
+li {
+  list-style: none;
+}
+
 #App {
   height: 100%;
   display: flex;
@@ -27,15 +31,26 @@ html {
 
 #view {
   height: 50%;
-  border: 1px solid grey;
-
+  border: 3px solid black;
+  position: relative;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .viewImage {
   height: 100%;
   width: 100%;
   border-radius: 15px;
+  position: absolute;
+
+  border: 3px solid black;
+}
+
+#title {
+  position: absolute;
+  z-index: 2;
 }
 
 #textBox {
@@ -113,7 +128,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  list-style-type: none;
   height: 100%;
 }
 
@@ -131,6 +145,11 @@ html {
   text-align: center;
 }
 
+#lookCaseFile {
+  padding: 32px;
+  text-align: center;
+}
+
 .inventoryItem {
   padding: 4px;
 }
@@ -138,7 +157,23 @@ html {
 .inventoryItem:hover {
   background-color: rgb(172, 185, 197);
 }
+.phoneApp {
+  padding: 4px;
+}
+.phoneApp:hover {
+  background-color: rgb(172, 185, 197);
+}
+.caseFilesItem {
+  padding: 4px;
+}
+.caseFilesItem:hover {
+  background-color: rgb(172, 185, 197);
+}
 
 .interactive {
   color: blue;
+}
+
+.location {
+  color: green;
 }

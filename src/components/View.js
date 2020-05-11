@@ -1,9 +1,16 @@
 import React from 'react';
 
-const View = ({ view, lookItem, lookObject, currentLocation }) => {
+const View = ({
+  view,
+  lookItem,
+  lookObject,
+  currentLocation,
+  lookCaseFile,
+}) => {
   const menuViewStyle = { filter: 'brightness(0.4)' };
   return (
     <div id="view">
+      {view === 'startMenu' && <h1 id="title">Dating Sim</h1>}
       {view === 'startMenu' && (
         <img className="viewImage" src="../assets/images/startmenu.png" />
       )}
@@ -31,6 +38,9 @@ const View = ({ view, lookItem, lookObject, currentLocation }) => {
       )}
       {view === 'lookObject' && (
         <img className="viewImage" src={lookObject.image} />
+      )}
+      {view === 'lookCaseFile' && (
+        <img className="viewImage" src={lookCaseFile.image} />
       )}
     </div>
   );

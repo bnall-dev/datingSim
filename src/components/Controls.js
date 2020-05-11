@@ -23,6 +23,12 @@ const Controls = ({
   const moveEast = () => {
     setCurrentLocation(locations[currentLocation.east]);
   };
+  const moveSouth = () => {
+    setCurrentLocation(locations[currentLocation.south]);
+  };
+  const moveNorth = () => {
+    setCurrentLocation(locations[currentLocation.north]);
+  };
   const moveWest = () => {
     setCurrentLocation(locations[currentLocation.west]);
   };
@@ -32,6 +38,10 @@ const Controls = ({
   };
   const closeApp = () => {
     setView('phone');
+  };
+
+  const closeCaseFile = () => {
+    setView('caseFiles');
   };
 
   const openPhoneMenu = () => {
@@ -75,9 +85,13 @@ const Controls = ({
               <button onClick={moveWest}>Go West</button>
             )}
             {!currentLocation.west && <button disabled>Go West</button>}
-            {currentLocation.north && <button>Go North</button>}
+            {currentLocation.north && (
+              <button onClick={moveNorth}>Go North</button>
+            )}
             {!currentLocation.north && <button disabled>Go North</button>}
-            {currentLocation.south && <button>Go South</button>}
+            {currentLocation.south && (
+              <button onClick={moveSouth}>Go South</button>
+            )}
             {!currentLocation.south && <button disabled>Go South</button>}
             {currentLocation.east && (
               <button onClick={moveEast}>Go East</button>
@@ -131,6 +145,18 @@ const Controls = ({
       )}
 
       {view === 'lookObject' && (
+        <div id="lookControls">
+          <button onClick={closeMenu}>Cancel</button>
+        </div>
+      )}
+
+      {view === 'lookCaseFile' && (
+        <div id="lookControls">
+          <button onClick={closeCaseFile}>Cancel</button>
+        </div>
+      )}
+
+      {view === 'lookLocation' && (
         <div id="lookControls">
           <button onClick={closeMenu}>Cancel</button>
         </div>

@@ -10,6 +10,10 @@ const Text = ({
   lookObject,
   contacts,
   caseFiles,
+  lookCaseFile,
+  setLookCaseFile,
+  lookLocation,
+  setLookLocation,
 }) => {
   const inventoryList = inventory.map((item, i) => (
     <li
@@ -34,13 +38,17 @@ const Text = ({
     }
   });
 
+  const openCaseFile = (e) => {
+    const file = caseFiles.find((file) => file.title === e.target.innerText);
+    setLookCaseFile(file);
+    setView('lookCaseFile');
+  };
+
   const caseFileList = caseFiles.map((file, i) => {
     if (file) {
       return (
-        <li key={i} className="caseFilesItem">
-          <h3>
-            #{i} {file.title}
-          </h3>
+        <li key={i} onClick={openCaseFile} className="caseFilesItem">
+          <h3>{file.title}</h3>
         </li>
       );
     }
@@ -131,6 +139,15 @@ const Text = ({
           {caseFileList}
         </div>
       )}
+      {view === 'lookCaseFile' && (
+        <div id="lookCaseFile">
+          <h2>
+            <b>{lookCaseFile.title}</b>
+          </h2>
+          <br />
+          <p>{lookCaseFile.content}</p>
+        </div>
+      )}
       {view === 'lookItem' && (
         <div id="lookBox">
           <h2>
@@ -155,6 +172,16 @@ const Text = ({
           <p>{lookObject.description}</p>
           <br />
           <p>{lookObject.lookDialogue}</p>
+        </div>
+      )}
+      {view === 'lookLocation' && (
+        <div id="lookBox">
+          <h2>
+            <b>{lookLocation.name}</b>
+          </h2>
+
+          <br />
+          {lookLocation.description}
         </div>
       )}
     </div>
