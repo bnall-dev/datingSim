@@ -1,0 +1,144 @@
+h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 12px;
+}
+p {
+  font-size: 10px;
+  line-height: 14px;
+  margin: 0;
+}
+
+html {
+  background-color: rgb(89, 89, 133);
+}
+
+#App {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Press Start 2P';
+}
+
+#view {
+  height: 50%;
+  border: 1px solid grey;
+
+  border-radius: 15px;
+}
+
+.viewImage {
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
+#textBox {
+  border-radius: 10px;
+  height: 30%;
+  overflow: scroll;
+  background-color: rgb(225, 225, 225);
+}
+
+#startTextBox {
+  padding: 32px;
+  text-align: center;
+  background-color: beige;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+#gameMenuBox {
+  padding: 32px;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(170, 210, 170);
+  height: 100%;
+  text-align: center;
+}
+
+#lookBox {
+  padding: 32px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  background-color: rgb(216, 171, 138);
+  height: 100%;
+}
+
+#gameplayText {
+  text-align: center;
+
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 15% 0 15%;
+  height: 100%;
+}
+
+#controlBox {
+  background-color: rgb(28, 28, 28);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 5px;
+  height: 15%;
+  padding: 8px;
+}
+
+#controlBox button {
+  background-color: grey;
+  margin: 4px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 8px;
+  font-family: 'Press Start 2P';
+}
+#controlBox button:disabled {
+  background-color: rgb(75, 75, 75);
+
+  color: rgb(165, 165, 165);
+}
+
+#inventory {
+  padding: 32px;
+  background-color: rgb(206, 215, 223);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  height: 100%;
+}
+
+#phone {
+  padding: 32px;
+  text-align: center;
+}
+#contacts {
+  padding: 32px;
+  text-align: center;
+}
+
+#caseFiles {
+  padding: 32px;
+  text-align: center;
+}
+
+.inventoryItem {
+  padding: 4px;
+}
+
+.inventoryItem:hover {
+  background-color: rgb(172, 185, 197);
+}
+
+.interactive {
+  color: blue;
+}
