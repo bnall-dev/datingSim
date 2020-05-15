@@ -1,70 +1,83 @@
 import React from 'react';
+import store from '../store.js';
+import { changeView, changeCurrentLocation } from '../../db/actions.js';
+import locations from '../../db/locations.js';
 
-const Controls = ({
-  view,
-  setView,
-  locations,
-  currentLocation,
-  setCurrentLocation,
-}) => {
+const Controls = ({ view, currentLocation, setCurrentLocation }) => {
+  const locationsArray = Object.values(locations);
+
   const startNewGame = () => {
-    setView('cutScene');
-    setView('gameplay');
+    const location = locations.outskirts;
+    store.dispatch(changeView('cutScene'));
+    store.dispatch(changeCurrentLocation(location));
+    store.dispatch(changeView('gameplay'));
   };
   const openGameMenu = () => {
-    setView('gameMenu');
+    store.dispatch(changeView('gameMenu'));
   };
   const openInventory = () => {
-    setView('inventory');
+    store.dispatch(changeView('inventory'));
   };
   const closeMenu = () => {
-    setView('gameplay');
+    store.dispatch(changeView('gameplay'));
   };
   const moveEast = () => {
-    setCurrentLocation(locations[currentLocation.east]);
+    const location = locationsArray.find(
+      (location) => location.keyName === currentLocation.east
+    );
+    store.dispatch(changeCurrentLocation(location));
   };
   const moveSouth = () => {
-    setCurrentLocation(locations[currentLocation.south]);
+    const location = locationsArray.find(
+      (location) => location.keyName === currentLocation.south
+    );
+    store.dispatch(changeCurrentLocation(location));
   };
   const moveNorth = () => {
-    setCurrentLocation(locations[currentLocation.north]);
+    const location = locationsArray.find(
+      (location) => location.keyName === currentLocation.north
+    );
+    store.dispatch(changeCurrentLocation(location));
   };
   const moveWest = () => {
-    setCurrentLocation(locations[currentLocation.west]);
+    const location = locationsArray.find(
+      (location) => location.keyName === currentLocation.west
+    );
+    store.dispatch(changeCurrentLocation(location));
   };
 
   const endLook = () => {
-    setView('inventory');
+    store.dispatch(changeView('inventory'));
   };
   const closeApp = () => {
-    setView('phone');
+    store.dispatch(changeView('phone'));
   };
 
   const closeCaseFile = () => {
-    setView('caseFiles');
+    store.dispatch(changeView('caseFiles'));
   };
 
   const openPhoneMenu = () => {
-    setView('phone');
+    store.dispatch(changeView('phone'));
   };
 
   const saveGame = () => {
     localStorage.clear();
 
     localStorage.setItem('currentLocation', currentLocation.name);
-    setView('gameplay');
+    store.dispatch(changeView('gameplay'));
   };
   const continueGame = () => {
     const locationsArray = Object.values(locations);
     const savedLocation = locationsArray.find((location) => {
       return location.name === localStorage.getItem('currentLocation');
     });
-    setCurrentLocation(savedLocation);
-    setView('gameplay');
+    store.dispatch(changeCurrentLocation(savedLocation));
+    store.dispatch(changeView('gameplay'));
   };
   const quitGame = () => {
-    setCurrentLocation(locations.outskirts);
-    setView('startMenu');
+    store.dispatch(changeCurrentLocation(locations.outskirts));
+    store.dispatch(changeView('startMenu'));
   };
 
   return (
@@ -156,7 +169,7 @@ const Controls = ({
         </div>
       )}
 
-      {view === 'lookLocation' && (
+      {view === 'lookBuilding' && (
         <div id="lookControls">
           <button onClick={closeMenu}>Cancel</button>
         </div>

@@ -6,6 +6,7 @@ const View = ({
   lookObject,
   currentLocation,
   lookCaseFile,
+  lookBuilding,
 }) => {
   const menuViewStyle = { filter: 'brightness(0.4)' };
   return (
@@ -41,6 +42,9 @@ const View = ({
       )}
       {view === 'lookCaseFile' && (
         <img className="viewImage" src={lookCaseFile.image} />
+      )}
+      {view === 'lookBuilding' && (
+        <img className="viewImage" src={lookBuilding.image} />
       )}
     </div>
   );

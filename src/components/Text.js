@@ -1,27 +1,25 @@
 import React from 'react';
+import store from '../store.js';
+import caseFiles from '../../db/caseFiles.js';
+import { examineItem, examineCaseFile } from '../../db/functions.js';
+import { changeView } from '../../db/actions.js';
 
 const Text = ({
   view,
-  setView,
   currentLocation,
   inventory,
   lookItem,
-  setLookItem,
   lookObject,
   contacts,
-  caseFiles,
+  lookBuilding,
   lookCaseFile,
-  setLookCaseFile,
-  lookLocation,
-  setLookLocation,
 }) => {
   const inventoryList = inventory.map((item, i) => (
     <li
       key={i}
       className="inventoryItem"
       onClick={() => {
-        setLookItem(item);
-        setView('lookItem');
+        examineItem(item);
       }}
     >
       <b>{item.menuName}</b>
@@ -38,27 +36,21 @@ const Text = ({
     }
   });
 
-  const openCaseFile = (e) => {
-    const file = caseFiles.find((file) => file.title === e.target.innerText);
-    setLookCaseFile(file);
-    setView('lookCaseFile');
-  };
-
-  const caseFileList = caseFiles.map((file, i) => {
-    if (file) {
+  const caseFileList = caseFiles.map((caseFile, i) => {
+    if (caseFile) {
       return (
-        <li key={i} onClick={openCaseFile} className="caseFilesItem">
-          <h3>{file.title}</h3>
+        <li key={i} onClick={examineCaseFile} className="caseFilesItem">
+          <h3>{caseFile.title}</h3>
         </li>
       );
     }
   });
 
   const openContacts = () => {
-    setView('contacts');
+    store.dispatch(changeView('contacts'));
   };
   const openCaseFiles = () => {
-    setView('caseFiles');
+    store.dispatch(changeView('caseFiles'));
   };
 
   return (
@@ -174,14 +166,14 @@ const Text = ({
           <p>{lookObject.lookDialogue}</p>
         </div>
       )}
-      {view === 'lookLocation' && (
+      {view === 'lookBuilding' && (
         <div id="lookBox">
           <h2>
-            <b>{lookLocation.name}</b>
+            <b>{lookBuilding.name}</b>
           </h2>
 
           <br />
-          {lookLocation.description}
+          {lookBuilding.description}
         </div>
       )}
     </div>

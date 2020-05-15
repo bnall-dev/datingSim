@@ -1,6 +1,14 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-const root = document.querySelector("#root");
-ReactDOM.render(<App />, root);
+import { Provider } from 'react-redux';
+import store from './store';
+
+const root = document.querySelector('#root');
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  root
+);
