@@ -11,7 +11,7 @@ const View = ({
   const menuViewStyle = { filter: 'brightness(0.4)' };
   return (
     <div id="view">
-      {view === 'startMenu' && <h1 id="title">Dating Sim</h1>}
+      {view === 'startMenu' && <h1 id="title">シリアルガールズ</h1>}
       {view === 'startMenu' && (
         <img className="viewImage" src="../assets/images/startmenu.png" />
       )}
