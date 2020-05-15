@@ -12,7 +12,7 @@ const objects = {
     name: 'Town Entrance Sign',
     dialogueName: 'sign',
     description: "'Welcome to Goodwood'",
-    lookDialogue: 'Not many  towns left like this.',
+    lookDialogue: 'Quaint. Not many towns like this anymore.',
     image: './assets/images/entranceSign.png',
   },
 };

@@ -89,6 +89,8 @@ const Text = ({
           <h2>
             <b>Menu</b>
           </h2>
+          <br />
+          <p>What do you want to do?</p>
         </div>
       )}
       {view === 'inventory' && (
@@ -152,10 +154,6 @@ const Text = ({
         <div id="lookBox">
           <h2>
             <b>{lookItem.menuName}</b>
-          </h2>
-
-          <h2>
-            <b>{lookItem.dialogueName}</b>
           </h2>
 
           <br />

@@ -16,7 +16,7 @@ const items = {
   },
   gun: {
     menuName: '38 Special',
-    description: `My trusty sidearm. Hopefully shouldn't have to use it. There are ${state.ammoCount} rounds loaded.`,
+    description: `My trusty sidearm! Hopefully shouldn't have to use it. There are ${state.ammoCount} rounds loaded.`,
     image: './assets/images/gun.png',
   },
 };

@@ -1,6 +1,7 @@
 h2 {
   margin: 0;
   font-size: 16px;
+  text-align: center;
 }
 
 h3 {
@@ -15,6 +16,7 @@ p {
 
 html {
   background-color: rgb(89, 89, 133);
+  text-align: center;
 }
 
 li {
@@ -71,7 +73,7 @@ li {
 
 #startTextBox {
   padding: 32px;
-  text-align: center;
+
   background-color: beige;
   height: 100%;
   border-radius: 10px 10px 0 0;
@@ -82,20 +84,22 @@ li {
   border-radius: 10px 10px 0 0;
   background-color: rgb(170, 210, 170);
   height: 100%;
-  text-align: center;
 }
 
 #lookBox {
   padding: 32px;
-  text-align: center;
   border-radius: 10px 10px 0 0;
   background-color: rgb(216, 171, 138);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#lookBox p {
+  width: auto;
 }
 
 #gameplayText {
-  text-align: center;
-
   border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: column;
@@ -142,21 +146,23 @@ li {
 
 #phone {
   padding: 32px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #contacts {
   padding: 32px;
-  text-align: center;
 }
 
 #caseFiles {
   padding: 32px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #lookCaseFile {
   padding: 32px;
-  text-align: center;
 }
 
 .inventoryItem {

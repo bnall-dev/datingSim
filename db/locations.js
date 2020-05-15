@@ -12,7 +12,7 @@ const locations = {
       <p>
         Dense fir trees line the narrow road.
         <br />
-        Your{' '}
+        My{' '}
         <b className="interactive" onClick={examineObject}>
           car
         </b>{' '}
@@ -48,7 +48,7 @@ const locations = {
     description: (
       <p>
         Various business offices line the street. The town entrance is to the
-        west. To the East you can see what looks like a high school in the
+        west. To the East I can see what looks like a high school in the
         distance.
       </p>
     ),
@@ -62,8 +62,8 @@ const locations = {
     south: 'streetC',
     description: (
       <p>
-        The street turns South, alongside the schoolgrounds. A path to the North
-        leads behind the schoolto the sports stadium.
+        The street turns South, alongside the school grounds. A path to the
+        North leads behind the school to the sports stadium.
       </p>
     ),
     image: './assets/images/schoolSide.gif',
@@ -78,8 +78,9 @@ const locations = {
     south: 'streetD',
     description: (
       <p>
-        To the South, the street continues further into the district. The road
-        forks to the East, in front of the school entrance.
+        To the South, the street continues into the district past a fancy
+        looking building. The road forks to the East, in front of the school
+        entrance.
       </p>
     ),
     image: './assets/images/schoolSide.gif',
@@ -95,7 +96,7 @@ const locations = {
         <b className="location" onClick={examineBuilding}>
           Goodwood High School
         </b>{' '}
-        stands along the road, which continues East into the next district. You
+        stands along the road, which continues East into the next district. I
         can see houses in the distance.
       </p>
     ),
@@ -111,9 +112,13 @@ const locations = {
     south: 'streetF',
     description: (
       <p>
-        The school can be seen in the distance to the North. The road continues
-        South into the district. There is a fork in the road to the West. It
-        looks like the sherrif's office is on the corner.
+        <b className="location" onClick={examineBuilding}>
+          Goodwood Town Hall
+        </b>{' '}
+        stands near a large lake. The school can be seen in the distance to the
+        North. The road continues South into the district. There is a fork in
+        the road to the West. It looks like the sheriff's department is on the
+        corner.
       </p>
     ),
     image: './assets/images/school.png',
@@ -127,9 +132,12 @@ const locations = {
     west: 'streetH',
     description: (
       <p>
-        The Goodwood Sheriff's Office stands on the corner of the block. To the
-        East, the road splits, going North and South. Further West, you see what
-        appears to be a hospital.
+        The{' '}
+        <b className="location" onClick={examineBuilding}>
+          Goodwood Sheriff's Department
+        </b>{' '}
+        stands on the corner of the block. To the East, the road splits, going
+        North and South. Further West, I see what appears to be a hospital.
       </p>
     ),
     image: './assets/images/sherriffOffice.gif',
@@ -144,7 +152,7 @@ const locations = {
       <p>
         The road ends at the parking lot for Goodwood General Hospital. A small
         detachment from the Hospital looks to be the morgue. Back to the East,
-        the road continues past the sheriff's office.
+        the road continues past the sheriff's department.
       </p>
     ),
     image: './assets/images/hospital.jpg',
@@ -157,10 +165,10 @@ const locations = {
     north: 'streetD',
     description: (
       <p>
-        From here you can see a large lake. To the North, the road leads into
-        the district. You can see the sheriff's office in the distance. To the
-        South, the road continues into the next district, but is blocked by
-        construction barriers. Several tall buildings shape the skyline.
+        To the North, the road leads into the district. You can see the
+        sheriff's department in the distance. To the South, the road continues
+        into the next district, but is blocked by construction barriers. Several
+        tall buildings shape the skyline.
       </p>
     ),
     image: './assets/images/school.png',
