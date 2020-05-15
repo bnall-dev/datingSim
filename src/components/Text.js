@@ -1,6 +1,7 @@
 import React from 'react';
 import store from '../store.js';
 import caseFiles from '../../db/caseFiles.js';
+import cutscenes from '../../db/cutscenes.js';
 import { examineItem, examineCaseFile } from '../../db/functions.js';
 import { changeView } from '../../db/actions.js';
 
@@ -13,6 +14,8 @@ const Text = ({
   contacts,
   lookBuilding,
   lookCaseFile,
+  currentScene,
+  sceneText,
 }) => {
   const inventoryList = inventory.map((item, i) => (
     <li
@@ -58,6 +61,11 @@ const Text = ({
       {view === 'startMenu' && (
         <div id="startTextBox">
           <h2>Select an Option.</h2>
+        </div>
+      )}
+      {view === 'cutscene' && (
+        <div id="cutsceneTextBox">
+          <p>{currentScene.text[sceneText]}</p>
         </div>
       )}
       {view === 'gameplay' && (

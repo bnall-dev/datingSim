@@ -39,6 +39,12 @@ li {
   align-items: center;
 }
 
+#cutsceneTextBox {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
 .viewImage {
   height: 100%;
   width: 100%;

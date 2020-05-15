@@ -1,16 +1,30 @@
 import React from 'react';
 import store from '../store.js';
-import { changeView, changeCurrentLocation } from '../../db/actions.js';
+import {
+  changeView,
+  changeCurrentLocation,
+  changeCutscene,
+  changeSceneText,
+} from '../../db/actions.js';
 import locations from '../../db/locations.js';
+import cutscenes from '../../db/cutscenes.js';
 
-const Controls = ({ view, currentLocation, setCurrentLocation }) => {
+const Controls = ({ view, currentLocation, currentScene, sceneText }) => {
   const locationsArray = Object.values(locations);
 
   const startNewGame = () => {
-    const location = locations.outskirts;
-    store.dispatch(changeView('cutScene'));
-    store.dispatch(changeCurrentLocation(location));
-    store.dispatch(changeView('gameplay'));
+    store.dispatch(changeView('cutscene'));
+    store.dispatch(changeCutscene(cutscenes.intro));
+    store.dispatch(changeCurrentLocation(locations.outskirts));
+  };
+
+  const continueCutscene = () => {
+    if (currentScene.text[sceneText + 1]) {
+      store.dispatch(changeSceneText(sceneText + 1));
+    } else {
+      store.dispatch(changeSceneText(0));
+      store.dispatch(changeView('gameplay'));
+    }
   };
   const openGameMenu = () => {
     store.dispatch(changeView('gameMenu'));
@@ -120,6 +134,11 @@ const Controls = ({ view, currentLocation, setCurrentLocation }) => {
           <button>Give Item</button>
         </div>
       )}
+      {view === 'cutscene' && (
+        <div id="cutsceneControls">
+          <button onClick={continueCutscene}>Next</button>
+        </div>
+      )}
 
       {view === 'gameMenu' && (
         <div id="gameMenuControls">
@@ -131,47 +150,47 @@ const Controls = ({ view, currentLocation, setCurrentLocation }) => {
       )}
       {view === 'inventory' && (
         <div id="inventoryControls">
-          <button onClick={closeMenu}>Cancel</button>
+          <button onClick={closeMenu}>Back</button>
         </div>
       )}
 
       {view === 'phone' && (
         <div id="phoneControls">
-          <button onClick={closeMenu}>Cancel</button>
+          <button onClick={closeMenu}>Back</button>
         </div>
       )}
       {view === 'contacts' && (
         <div id="contactsControls">
-          <button onClick={closeApp}>Cancel</button>
+          <button onClick={closeApp}>Back</button>
         </div>
       )}
       {view === 'caseFiles' && (
         <div id="caseFilesControls">
-          <button onClick={closeApp}>Cancel</button>
+          <button onClick={closeApp}>Back</button>
         </div>
       )}
 
       {view === 'lookItem' && (
         <div id="lookControls">
-          <button onClick={endLook}>Cancel</button>
+          <button onClick={endLook}>Back</button>
         </div>
       )}
 
       {view === 'lookObject' && (
         <div id="lookControls">
-          <button onClick={closeMenu}>Cancel</button>
+          <button onClick={closeMenu}>Back</button>
         </div>
       )}
 
       {view === 'lookCaseFile' && (
         <div id="lookControls">
-          <button onClick={closeCaseFile}>Cancel</button>
+          <button onClick={closeCaseFile}>Back</button>
         </div>
       )}
 
       {view === 'lookBuilding' && (
         <div id="lookControls">
-          <button onClick={closeMenu}>Cancel</button>
+          <button onClick={closeMenu}>Back</button>
         </div>
       )}
     </div>

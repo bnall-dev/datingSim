@@ -6,6 +6,7 @@ export const smokeCig = () => {
 export const changeView = (view) => {
   return { type: 'CHANGE_VIEW', view };
 };
+
 export const changeCurrentLocation = (location) => {
   return { type: 'CHANGE_CURRENTLOCATION', location };
 };
@@ -24,4 +25,12 @@ export const changeLookBuilding = (building) => {
 
 export const changeLookCaseFile = (caseFile) => {
   return { type: 'CHANGE_LOOKCASEFILE', caseFile };
+};
+
+export const changeCutscene = (scene) => {
+  return { type: 'CHANGE_CUTSCENE', scene };
+};
+
+export const changeSceneText = (text) => {
+  return { type: 'CHANGE_SCENETEXT', text };
 };

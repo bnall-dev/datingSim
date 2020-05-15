@@ -18,6 +18,8 @@ const mapStateToProps = (state) => {
     lookObject: state.lookObject,
     lookBuilding: state.lookBuilding,
     lookCaseFile: state.lookCaseFile,
+    currentScene: state.currentScene,
+    sceneText: state.sceneText,
   };
 };
 
@@ -25,7 +27,6 @@ const App = (props) => {
   const saveData = window.localStorage;
 
   const [contacts, setContacts] = useState([]);
-
   const [inventory, setInventory] = useState([
     items.cigarettes,
     items.badge,
@@ -51,8 +52,15 @@ const App = (props) => {
         contacts={contacts}
         lookBuilding={props.lookBuilding}
         lookCaseFile={props.lookCaseFile}
+        currentScene={props.currentScene}
+        sceneText={props.sceneText}
       />
-      <Controls view={props.view} currentLocation={props.currentLocation} />
+      <Controls
+        view={props.view}
+        currentLocation={props.currentLocation}
+        currentScene={props.currentScene}
+        sceneText={props.sceneText}
+      />
     </div>
   );
 };

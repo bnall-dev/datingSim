@@ -3,12 +3,14 @@ import store from '../src/store.js';
 import objects from './objects';
 import buildings from './buildings';
 import caseFiles from './caseFiles';
+import cutscenes from './cutscenes';
 
 import {
   changeLookObject,
   changeLookItem,
   changeLookBuilding,
   changeView,
+  changeCurrentScene,
   changeLookCaseFile,
 } from './actions.js';
 

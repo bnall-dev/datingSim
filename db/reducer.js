@@ -12,6 +12,7 @@ export const reducer = (state = initialState, action) => {
         ...state,
         view: action.view,
       };
+
     case 'CHANGE_CURRENTLOCATION':
       return {
         ...state,
@@ -36,6 +37,16 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         lookCaseFile: action.caseFile,
+      };
+    case 'CHANGE_CUTSCENE':
+      return {
+        ...state,
+        currentScene: action.scene,
+      };
+    case 'CHANGE_SCENETEXT':
+      return {
+        ...state,
+        sceneText: action.text,
       };
 
     default:
