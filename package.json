@@ -12,7 +12,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "axios": "^0.19.2",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "bootstrap": "^4.4.1",
     "bootstrap-icons": "^1.0.0-alpha2",
     "express": "^4.17.1",
